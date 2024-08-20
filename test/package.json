@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:run": "jest --runInBand",
-    "test:all": "jest --runInBand"
+    "test:run": "jest --runInBand"
   },
   "keywords": [],
   "author": "",

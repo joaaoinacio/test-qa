@@ -1,22 +1,10 @@
+
 import request from 'supertest';
+import { generateToken, generateRandomBarcode, deleteProductIfExists } from '../test-utils';
+
 
 const baseURL = 'http://localhost:3000';
 let token: string;
-
-async function generateToken(): Promise<string> {
-  const response = await request(baseURL)
-    .post('/user/login')
-    .send({
-      mail: 'qa@raffinato.com',
-      password: 'test-qa',
-    });
-
-  return response.body.token;
-}
-
-function generateRandomBarcode(): number {
-  return Math.floor(100000 + Math.random() * 900000); // Gera um número de 6 dígitos
-}
 
 beforeAll(async () => {
   token = await generateToken();
@@ -124,3 +112,4 @@ describe('POST /product', () => {
     });
   });
 });
+
