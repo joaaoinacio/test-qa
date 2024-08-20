@@ -1,81 +1,77 @@
-# Raffinato - QA Test
-___
+Read ME:
 
 
-## Api
+# TEST-QA
 
-O projeto contém uma api simples com um login, um CRUD de produtos e uma documentação 
-da api em swagger no endpoint: http://localhost:3000/doc, a api usa um banco de dados em memoria
-toda vez que a aplicação é iniciada a base de dados inicia vazia.
-As rotas privadas usam JWT para se autenticar.
+## Descrição do Projeto
 
-### Login
-
-- Usuário e senha para acessar a api são fixo 
-  - usuário: `qa@raffinato.com`
-  - senha: `test-qa`
-
-### Produtos
-
-- O cadastro de produtos tem a seguinte regra para os seus campos:
-  - **nome:**
-    - campo de texto
-    - obrigatório 
-    - com uma quantidade caracteres de 3 a 20
-  - **barcode:**
-    - campo númerico inteiro
-    - obrigatório
-    - campo deve ser unico
-    - com o valor de 1 até 999999
-  - **price:**
-    - campo númerico decimal
-    - obrigatório
-    - máximo de duas casas decimais
-    - com o valor de 0,01 até 999.99 
-
-### Setup da api
-
-- Ter instalado a versão do node 20 ou superior
-- Acesse o diretório api
-  - Caso use o NVM([Node Version Manager](https://github.com/nvm-sh/nvm)) rode o comando `nvm use` dentro do diretório api
-- Instalar as dependências rodar o comando `yarn install` 
-- Subir a aplicação rodar o comando `yarn start`
-
-## Requerimentos
- 
-- Criar um fork publico do projeto para sua conta no github
-- Criar um branch com o nome development
-- Criar um projeto em jest isolado do projeto da api em um diretório com o nome de test
-- Todos os testes devem rodar isoladamente do projeto da api fazendo requisições em seus endpoint
-- Fazer commits conforme o progresso de inclussão dos teste
-- Criar um arquivo README.md detro do diretório criado para o teste documentando em como fazer o setup e rodar os testes.
-- Oraganizar o projeto da forma que achar melhor
+Este projeto é uma suíte de testes automatizados para a API de um sistema de produtos, focando em garantir a correta funcionalidade dos endpoints de CRUD de produtos e autenticação de usuários. Os testes incluem cenários positivos e negativos, cobrindo uma ampla gama de casos de uso e validações.
 
 
-### Não obrigatórios
+## Pré-requisitos
 
-- Usar typescript
-- Usar uma ferramenta de lint / code style
-- Configurar para rodar os testes via github actions
+•⁠  ⁠*Node.js* (versão recomendada: >= 14.x)
+•⁠  ⁠*Yarn* ou *NPM*
+•⁠  ⁠*API* deve estar rodando localmente na porta 3000.
 
+## Instalação
 
+1.⁠ ⁠Clone o repositório:
 
-## Requisitos para serem testados
+   ⁠ bash
+   git clone https://github.com/joaaoinacio/test-qa.git
+   cd test-qa
+    ⁠
 
-- **Login**
-  - Deve ser implementado um teste para acessar com as credências validas
-  - Deve ser implementado um teste de tentativa de acessar com credências inválidas 
-- **Produtos**
-  - Deve ser implementado um ou mais testes para criar um novo produto
-  - Deve ser implementado um ou mais testes para editar um produto
-  - Deve ser implementado um ou mais testes para remover um produto
-  - Deve ser implementado um ou mais testes para listar produtos
+2.⁠ ⁠Instale as dependências:
 
-## Entrega
+   ⁠ bash
+   yarn install
+   # ou
+   npm install
+    ⁠
 
-- Abrir um pull request para a branch main
-- Enviar por e-mail avisando que finalizou o teste com o link do repositório
+## Scripts Disponíveis
 
-    
-A descrição desse teste é um pouco vaga em alguns aspectos de forma intencional, 
-sinta-se à vontade para pedir ajuda ou tirar duvidas caso ache necessário.
+No projeto, você pode utilizar os seguintes comandos para rodar os testes:
+
+•⁠  ⁠*Rodar todos os testes*:
+
+   ⁠ bash
+   yarn test:run
+   # ou
+   npm run test:run
+    ⁠
+
+•⁠  ⁠*Rodar um teste específico*:
+
+   Você pode rodar um teste específico passando o caminho do arquivo de teste:
+
+   ⁠ bash
+   yarn test:run -- tests/product/product-create.test.ts
+    ⁠
+
+   Este comando executa apenas o teste localizado no caminho especificado.
+
+## Dependências
+
+O projeto utiliza as seguintes dependências principais:
+
+•⁠  ⁠⁠ @nestjs/common ⁠: Framework usado para construir a API.
+•⁠  ⁠⁠ @nestjs/testing ⁠: Utilitário de testes do NestJS.
+•⁠  ⁠⁠ jsonwebtoken ⁠: Biblioteca para trabalhar com tokens JWT.
+•⁠  ⁠⁠ supertest ⁠: Biblioteca para realizar testes de integração em APIs.
+
+E as seguintes dependências de desenvolvimento:
+
+•⁠  ⁠⁠ typescript ⁠: Linguagem usada para escrever o código do projeto.
+•⁠  ⁠⁠ jest ⁠: Framework de testes utilizado.
+•⁠  ⁠⁠ ts-jest ⁠: Para usar TypeScript com Jest.
+•⁠  ⁠⁠ @types/jest ⁠: Tipos do Jest para TypeScript.
+•⁠  ⁠⁠ @types/jsonwebtoken ⁠: Tipos para a biblioteca jsonwebtoken.
+•⁠  ⁠⁠ @types/supertest ⁠: Tipos para a biblioteca supertest.
+
+## Como Executar os Testes
+
+1.⁠ ⁠Certifique-se de que a API está rodando localmente na porta 3000.
+2.⁠ ⁠Execute os testes com o comando especificado acima.
