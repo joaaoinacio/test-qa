@@ -41,7 +41,7 @@ describe('PUT /product/:id', () => {
         barcode: 123456,
       });
 
-    expect(response.status).toBe(404); // Ajustado para refletir o status atual da API
+    expect(response.status).toBe(404);
     expect(response.body).toHaveProperty('error', 'Not Found');
   });
 
@@ -55,7 +55,7 @@ describe('PUT /product/:id', () => {
         barcode: 654321,
       });
 
-    expect(response.status).toBe(404); // Ajustado conforme o comportamento da API
+    expect(response.status).toBe(404);
     expect(response.body).toHaveProperty('error', 'Not Found');
   });
 
@@ -78,7 +78,7 @@ describe('PUT /product/:id', () => {
         barcode: 654321,
       });
 
-    expect(response.status).toBe(404); // Ajustado conforme o comportamento da API
+    expect(response.status).toBe(404);
     expect(response.body).toHaveProperty('error', 'Not Found');
   });
 
@@ -92,7 +92,7 @@ describe('PUT /product/:id', () => {
         barcode: 123457,
       });
 
-    expect(response.status).toBe(404); // Ajustado conforme o comportamento da API
+    expect(response.status).toBe(404); 
     expect(response.body).toHaveProperty('error', 'Not Found');
   });
 

@@ -1,4 +1,3 @@
-
 import request from 'supertest';
 import { generateToken, generateRandomBarcode, deleteProductIfExists } from '../test-utils';
 

@@ -36,7 +36,7 @@ describe('GET /product/:id', () => {
       .get(`/product/${productId}`)
       .set('Authorization', `Bearer ${token}`);
 
-    expect(response.status).toBe(422); // Ajuste conforme o status real
+    expect(response.status).toBe(422); 
     expect(response.body).toHaveProperty('error', 'Unprocessable Entity');
   });
 
@@ -45,7 +45,7 @@ describe('GET /product/:id', () => {
       .get('/product/non-existing-id')
       .set('Authorization', `Bearer ${token}`);
 
-    expect(response.status).toBe(422); // Ajuste conforme o status real
+    expect(response.status).toBe(422); 
     expect(response.body).toHaveProperty('error', 'Unprocessable Entity');
   });
 
@@ -54,7 +54,7 @@ describe('GET /product/:id', () => {
       .get('/product/invalid-id-format')
       .set('Authorization', `Bearer ${token}`);
 
-    expect(response.status).toBe(422); // Ajuste conforme o status real
+    expect(response.status).toBe(422);
     expect(response.body).toHaveProperty('error', 'Unprocessable Entity');
   });
 
