@@ -117,7 +117,6 @@ describe('POST /user/login', () => {
         mail: 'qa@raffinato.com',
         password: 'wrong-password',
       });
-
     expect(finalResponse.status).toBe(401);
     expect(finalResponse.body).toHaveProperty('error', 'Unauthorized');
   });
